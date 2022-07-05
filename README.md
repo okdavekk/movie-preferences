@@ -1,4 +1,4 @@
-# 13 Object-Relational Mapping (ORM): E-Commerce Back End
+# 16 Project 2: Interactive Full-Stack Application
 
 ## Table of Contents
 
@@ -17,188 +17,67 @@
 
 - [REPOSITORY](https://github.com/okdavekk/e-commerce-back-end)
 
-- [Insomnia Product CRUD Operations Video](https://www.awesomescreenshot.com/video/9715442?key=c2d0035cb648e4a1519a9949d8fa93a0)
+- [Video 1]()
 
-- [Insomnia Category CRUD Operations Video](https://www.awesomescreenshot.com/video/9715549?key=3673a4feff814abd667ff9f651e3d816)
-
-- [Insomnia Tag CRUD Operations Video](https://www.awesomescreenshot.com/video/9715633?key=4e7f7e9cee95254502387bfc5d105aec)
+- [Video 2]()
 
 
 ## Installation
-- Run npm i in Develop folder
-- run mysql and `source.db/schema.sql`
-- Seed database outside of mysql command line in main of directory
-- run nodemon in terminal 
+
+- Run npm i
 
 
 ## Description
-### Your Task
-Internet retail, also known as **e-commerce**, is the largest sector of the electronics industry, generating an estimated $29 trillion in 2019. E-commerce platforms like Shopify and WooCommerce provide a suite of services to businesses of all sizes. Due to their prevalence, understanding the fundamental architecture of these platforms will benefit you as a full-stack web developer.
+Projects play a key role in your journey to becoming a full-stack web developer. As you enter the last phase of the boot camp, you’ll begin to apply for development jobs. If you want to land interviews, your portfolio must feature high-quality deployed examples of your work—-and you can use your finished projects for that very purpose.
 
-Your task is to build the back end for an e-commerce site by modifying starter code. You’ll configure a working Express.js API to use Sequelize to interact with a MySQL database.
+As your first opportunity to show employers your collaborative skills and coding abilities, this particular project will be a focal point of your portfolio. Employers want to see what you can do, but they also want to see how you work with other developers. The more examples of deployed collaborative work you have in your portfolio, the more likely you are to get an interview and a job.
 
-Because this application won’t be deployed, you’ll also need to provide a link to a walkthrough video that demonstrates its functionality and all of the acceptance criteria being met. You’ll need to submit a link to the video and add it to the readme of your project.
+### Project Requirements
+You and your group will use everything you’ve learned over the past six modules to create a real-world full-stack application that you’ll be able to showcase to potential employers. The user story and acceptance criteria will depend on the project that you create, but your project must fulfil the following requirements:
 
-### User Story
-AS A manager at an internet retail company
-I WANT a back end for my e-commerce website that uses the latest technologies
-SO THAT my company can compete with other e-commerce companies
+* Use Node.js and Express.js to create a RESTful API.
 
-### Acceptance Criteria
-GIVEN a functional Express.js API
+* Use Handlebars.js as the template engine.
 
-WHEN I add my database name, MySQL username, and MySQL password to an environment variable file THEN I am able to connect to a database using Sequelize
+* Use MySQL and the Sequelize ORM for the database.
 
-WHEN I enter schema and seed commands THEN a development database is created and is seeded with test data
+* Have both GET and POST routes for retrieving and adding new data.
 
-WHEN I enter the command to invoke the application THEN my server is started and the Sequelize models are synced to the MySQL database
+* Use at least one new library, package, or technology that we haven’t discussed.
 
-WHEN I open API GET routes in Insomnia for categories, products, or tags THEN the data for each of these routes is displayed in a formatted JSON
+* Have a folder structure that meets the MVC paradigm.
 
-WHEN I test API POST, PUT, and DELETE routes in Insomnia THEN I am able to successfully create, update, and delete data in my database
+* Include authentication (express-session and cookies).
 
-### Getting Started
-This Challenge will require a video submission. Refer to the [Fullstack Blog Video Submission Guide](https://coding-boot-camp.github.io/full-stack/computer-literacy/video-submission-guide) for additional guidance on creating a video.
+* Protect API keys and sensitive information with environment variables.
 
-You’ll need to use the [MySQL2](https://www.npmjs.com/package/mysql2) and [Sequelize](https://www.npmjs.com/package/sequelize) packages to connect your Express.js API to a MySQL database and the [dotenv](https://www.npmjs.com/package/dotenv) package to use environment variables to store sensitive data.
+* Be deployed using Heroku (with data).
 
-Use the `schema.sql` file in the `db` folder to create your database with MySQL shell commands. Use environment variables to store sensitive data like your MySQL username, password, and database name.
+* Have a polished UI.
 
-### Database Models
-Your database should contain the following four models, including the requirements listed for each model:
+* Be responsive.
 
-* `Category`
+* Be interactive (i.e., accept and respond to user input).
 
-  * `id`
+* Meet good-quality coding standards (file structure, naming conventions, follows best practices for class/id naming conventions, indentation, quality comments, etc.).
 
-    * Integer.
-  
-    * Doesn't allow null values.
-  
-    * Set as primary key.
-  
-    * Uses auto increment.
+* Have a professional README (with unique name, description, technologies used, screenshot, and link to deployed application).
 
-  * `category_name`
-  
-    * String.
-  
-    * Doesn't allow null values.
+### Presentation Requirements
 
-* `Product`
+Use this [project presentation template](https://docs.google.com/presentation/d/10QaO9KH8HtUXj__81ve0SZcpO5DbMbqqQr4iPpbwKks/edit?usp=sharing) to address the following: 
 
-  * `id`
-  
-    * Integer.
-  
-    * Doesn't allow null values.
-  
-    * Set as primary key.
-  
-    * Uses auto increment.
+* Elevator pitch: a one minute description of your application
 
-  * `product_name`
-  
-    * String.
-  
-    * Doesn't allow null values.
+* Concept: What is your user story? What was your motivation for development?
 
-  * `price`
-  
-    * Decimal.
-  
-    * Doesn't allow null values.
-  
-    * Validates that the value is a decimal.
+* Process: What were the technologies used? How were tasks and roles broken down and assigned? What challenges did you encounter? What were your successes?
 
-  * `stock`
-  
-    * Integer.
-  
-    * Doesn't allow null values.
-  
-    * Set a default value of `10`.
-  
-    * Validates that the value is numeric.
+* Demo: Show your stuff!
 
-  * `category_id`
-  
-    * Integer.
-  
-    * References the `Category` model's `id`.
+* Directions for Future Development
 
-* `Tag`
-
-  * `id`
-  
-    * Integer.
-  
-    * Doesn't allow null values.
-  
-    * Set as primary key.
-  
-    * Uses auto increment.
-
-  * `tag_name`
-  
-    * String.
-
-* `ProductTag`
-
-  * `id`
-
-    * Integer.
-
-    * Doesn't allow null values.
-
-    * Set as primary key.
-
-    * Uses auto increment.
-
-  * `product_id`
-
-    * Integer.
-
-    * References the `Product` model's `id`.
-
-  * `tag_id`
-
-    * Integer.
-
-    * References the `Tag` model's `id`.
-
-### Associations
-You'll need to execute association methods on your Sequelize models to create the following relationships between them:
-
-* `Product` belongs to `Category`, and `Category` has many `Product` models, as a category can have multiple products but a product can only belong to one category.
-
-* `Product` belongs to many `Tag` models, and `Tag` belongs to many `Product` models. Allow products to have multiple tags and tags to have many products by using the `ProductTag` through model.
-
-> **Hint:** Make sure you set up foreign key relationships that match the column we created in the respective models.
-
-### Fill Out the API Routes to Perform RESTful CRUD Operations
-Fill out the unfinished routes in `product-routes.js`, `tag-routes.js`, and `category-routes.js` to perform create, read, update, and delete operations using your Sequelize models.
-
-Note that the functionality for creating the many-to-many relationship for products has already been completed for you.
-
-> **Hint**: Be sure to look at the mini-project code for syntax help and use your model's column definitions to figure out what `req.body` will be for POST and PUT routes!
-
-### Seed the Database
-After creating the models and routes, run `npm run seed` to seed data to your database so that you can test your routes.
-
-### Sync Sequelize to the Database on Server Start
-Create the code needed in `server.js` to sync the Sequelize models to the MySQL database on server start.
-
-
-## Visuals
-### Example for Product CRUD Operations
-![Insomnia Product CRUD Operations](./Assets/product-CRUD.gif)
-
-### Example for Category CRUD Operations
-![Insomnia Category CRUD Operations](./Assets/category-CRUD.gif)
-
-### Example for Tag CRUD Operations
-![Insomnia Tag CRUD Operations](./Assets/tag-CRUD.gif)
+* Links to the deployed application and the GitHub repository. Use the [Guide to Deploy with Heroku and MySQL](https://coding-boot-camp.github.io/full-stack/heroku/deploy-with-heroku-and-mysql) on The Full-Stack Blog if you need a reminder on how to deploy to Heroku.
 
 ## Authors and Acknowledgement
-Made by myself with help from others
+Created by (AB order): Greg Chambers, Sergey Divachuk, James Giraldo, David Kemp, and Safwam Islam with help from many others. 
