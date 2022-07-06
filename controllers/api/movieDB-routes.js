@@ -15,16 +15,16 @@ const axios = require('axios').default;
 //       res.status(400).json(err);
 //     }
 //   });
-  async function getUser() {
-    try {
-      const response = await axios.get('/user?ID=12345');
-      console.log(response);
-    } catch (error) {
-      console.error(error);
-    }
-  }
 
-console.log('Bye');
+// const testRequest = async () => {
+
+//   const result = await axios.get('https://api.themoviedb.org/3/movie/550?api_key=9e1589a2fc403d6de0df005fb8a3d78a')
+//   console.log(result.data)
+
+// }
+// testRequest();
+
+
 
 
 
