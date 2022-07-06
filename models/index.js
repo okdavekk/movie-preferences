@@ -1,6 +1,7 @@
 const User = require('./User');
 const Movie = require('./Movie');
 const Preferences = require('./Preferences');
+const MovieUser = require('./MovieUser.js');
 
 User.hasOne(Preferences, {
   foreignKey: 'user_id'
@@ -10,12 +11,14 @@ Preferences.belongsTo(User, {
   foreignKey: 'user_id'
 });
 
-// Gallery.hasMany(Painting, {
-//   foreignKey: 'gallery_id',
-// });
+Movie.belongsToMany(User, {
+  foreignKey: 'user_id',
+  through: MovieUser,
+});
 
-// Painting.belongsTo(Gallery, {
-//   foreignKey: 'gallery_id',
-// });
+User.belongsToMany(Movie, {
+  foreignKey: 'movie_id',
+  through: MovieUser,
+});
 
-module.exports = { User, Movie, Preferences};
+module.exports = { User, Movie, Preferences, MovieUser,};

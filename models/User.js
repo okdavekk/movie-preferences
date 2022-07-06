@@ -35,10 +35,10 @@ User.init(
         len: [6],
       },
     },
-    movies: [{
+    chosenMovies: {
       type: DataTypes.STRING,
       allowNull: true,
-    }]
+    }
   },
   {
     hooks: {
