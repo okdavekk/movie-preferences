@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const axios = require('axios').default;
 
 // router.get('/', async (req, res) => {
 //     // find all categories
