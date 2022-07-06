@@ -36,7 +36,7 @@ router.put('/addmovie', async (req, res) => {
       })
 
     }
-  }catch (err) {
+  } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
