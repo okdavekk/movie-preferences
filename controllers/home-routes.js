@@ -1,24 +1,35 @@
 const router = require('express').Router();
 const { Movie, User, MovieUser, Preferences } = require('../models');
+const axios = require('axios').default;
 
 // GET all galleries for homepage
 router.get('/', async (req, res) => {
   try {
-    const dbGalleryData = await Preferences.findAll({
-      // include: [
-      //   // {
-      //   //   model: Painting,
-      //   //   attributes: ['filename', 'description'],
-      //   // },
-      // ],
-    });
+    // const dbGalleryData = await Preferences.findAll({
+    //   // include: [
+    //   //   // {
+    //   //   //   model: Painting,
+    //   //   //   attributes: ['filename', 'description'],
+    //   //   // },
+    //   // ],
+    // });
 
-    const preferences = dbGalleryData.map((preferences) =>
-      preferences.get({ plain: true })
-    );
+    // const preferences = dbGalleryData.map((preferences) =>
+    //   preferences.get({ plain: true })
+    // );
 
+    // const testRequest = async () => {
+
+  // const result = await axios.get('https://api.themoviedb.org/3/movie/550?api_key=9e1589a2fc403d6de0df005fb8a3d78a')
+  // console.log(result)
+
+  //     const dbSearchResults = result.map((dbSearchResults) =>
+  //     dbSearchResults.get({ plain: true })
+  //   );
+
+//}
     res.render('homepage', {
-      preferences,
+      // dbSearchResults,
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {
