@@ -1,0 +1,24 @@
+const router = require('express').Router();
+
+router.get('/', async (req, res) => {
+    // find all categories
+    // be sure to include its associated Product data
+    try {
+    //   const categoryData = await Category.findAll({
+    //     include: [
+    //       Product
+    //     ],
+    //   });
+      res.status(200).json("hello");
+    } catch (err) {
+      res.status(400).json(err);
+    }
+  });
+
+console.log('Bye');
+
+
+
+
+
+module.exports = router;
