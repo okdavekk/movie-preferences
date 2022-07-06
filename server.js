@@ -4,7 +4,7 @@ const session = require('express-session');
 const exphbs = require('express-handlebars');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const axios = require('axios');
-import axios from "axios";
+
 
 const routes = require('./controllers');
 const sequelize = require('./config/connection');
@@ -25,7 +25,7 @@ const sess = {
 
 app.use(session(sess));
 
-const hbs = exphbs.create({ helpers });
+const hbs = exphbs.create({ helpers }); 
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
@@ -36,6 +36,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
 
+const testRequest = async () => {
+
+  const result = await axios.get('https://api.themoviedb.org/3/movie/550?api_key=9e1589a2fc403d6de0df005fb8a3d78a')
+  console.log(result.data)
+
+}
+testRequest();
+// get trending movies for the week  https://api.themoviedb.org/3/trending/movie/week?api_key=9e1589a2fc403d6de0df005fb8a3d78a
+// search by keyword https://api.themoviedb.org/3/search/keyword?api_key=9e1589a2fc403d6de0df005fb8a3d78a&query=action&page=1
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
