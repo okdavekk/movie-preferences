@@ -12,6 +12,7 @@ router.post('/', async (req, res) => {
 
     req.session.save(() => {
       req.session.loggedIn = true;
+      req.session.loggedInUser = dbUserData.id;
 
       res.status(200).json(dbUserData);
     });
@@ -20,6 +21,27 @@ router.post('/', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+// added this.... 
+router.put('/addmovie', async (req, res) => {
+  try {
+    if (req.session.loggedIn) {
+      const dbUserData = await User.update({
+        movies: req.body
+      },
+      {
+        where: {
+          id: req.session.loggedInUser
+        }
+      })
+
+    }
+  }catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+})
+
 
 // Login
 router.post('/login', async (req, res) => {
