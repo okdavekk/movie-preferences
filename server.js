@@ -3,6 +3,8 @@ const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
+const axios = require('axios');
+import axios from "axios";
 
 const routes = require('./controllers');
 const sequelize = require('./config/connection');
