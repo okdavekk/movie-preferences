@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Movie, User, MovieUser, Preferences } = require("../models");
+const { User, Favorite } = require("../models");
 const axios = require("axios").default;
 const { get_five_movies } = require("../utils/helpers.js");
 
@@ -48,6 +48,7 @@ router.get("/search-results", async (req, res) => {
     );
     // console.log(data.results.slice(0, 5).length)
     const movies = data.results;
+   
 
     res.render("search-results", {
       movies,

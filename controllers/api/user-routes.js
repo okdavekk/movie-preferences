@@ -1,5 +1,11 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, Favorite } = require('../../models');
+
+//create route to save favorite
+router.post('/movies', function (req, res){
+  console.log(req.body);
+})
+
 
 // CREATE new user
 router.post('/', async (req, res) => {
@@ -13,6 +19,7 @@ router.post('/', async (req, res) => {
     req.session.save(() => {
       req.session.loggedIn = true;
       req.session.loggedInUser = dbUserData.id;
+      req.session.username = dbUserData.username;
 
       res.status(200).json(dbUserData);
     });
@@ -91,5 +98,9 @@ router.post('/logout', (req, res) => {
     res.status(404).end();
   }
 });
+
+// Favorites.create 
+
+// Favorite.create
 
 module.exports = router;
