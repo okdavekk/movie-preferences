@@ -1,0 +1,17 @@
+
+<section class="card">
+    <form id="movie-search" action="/search-results">
+    <div>
+        <input type="text" id="title" name="title" placeholder="Search">
+    </div>
+    <div>
+        <button id="searchBtn" type="submit" value="Search">Submit</button>
+    </div>
+</form>
+
+
+    <a href="/search/{{id}}">
+        <header>{{original_title}}</header>
+        <img src="https://image.tmdb.org/t/p/w500{{poster_path}}" alt="{{original_title}}">
+    </a>
+</section>
