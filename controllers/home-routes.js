@@ -6,6 +6,7 @@ const { get_five_movies } = require("../utils/helpers.js");
 // GET all galleries for homepage
 router.get("/", async (req, res) => {
   try {
+    console.log("hello");
     const dbGalleryData = await Preferences.findAll({});
 
     const preferences = dbGalleryData.map((preferences) =>
