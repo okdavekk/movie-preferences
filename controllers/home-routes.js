@@ -14,9 +14,10 @@ router.get("/", async (req, res) => {
     );
 
     const { data } = await axios.get(
-      "https://api.themoviedb.org/3/movie/550?api_key=9e1589a2fc403d6de0df005fb8a3d78a"
+      "https://api.themoviedb.org/3/trending/movie/day?api_key=9e1589a2fc403d6de0df005fb8a3d78a"
     );
-    const movies = await get_five_movies(data);
+    // console.log(data.results.slice(0, 5).length)
+    const movies = data.results.slice(0, 4);
 
     res.render("homepage", {
       data: movies,
