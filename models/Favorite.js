@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-class MovieUser extends Model {}
-MovieUser.init(
+class Favorite extends Model {}
+Favorite.init(
   {
     // define columns
     id: {
@@ -10,12 +10,14 @@ MovieUser.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    movie_title: {
+      type: DataTypes.STRING,
+    },
+    movie_poster: {
+      type: DataTypes.STRING,
+    },
     movie_id: {
       type: DataTypes.INTEGER,
-      references: {
-        model: 'movie',
-        key: 'id',
-      }
     },
     user_id: {
       type: DataTypes.INTEGER,
@@ -30,7 +32,7 @@ MovieUser.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'movie_user',
+    modelName: 'favorite',
   }
 );
-module.exports = MovieUser;
+module.exports = Favorite;
