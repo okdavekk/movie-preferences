@@ -35,10 +35,14 @@ User.init(
         len: [6],
       },
     },
-    chosenMovies: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    }
+    // favorite_id: {
+    //   type: DataTypes.STRING,
+    //   allowNull: true,
+    //   references: {
+    //     model: "favorite",
+    //     key: "id"
+    //   }
+    // }
   },
   {
     hooks: {

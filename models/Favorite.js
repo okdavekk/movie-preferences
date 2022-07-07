@@ -15,6 +15,7 @@ Favorite.init(
     },
     movie_poster: {
       type: DataTypes.STRING,
+      defaultValue: 'http://www.placeholder.com/500x700'
     },
     movie_id: {
       type: DataTypes.INTEGER,

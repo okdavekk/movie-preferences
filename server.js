@@ -46,7 +46,7 @@ app.use(routes);
 // testRequest();
 // get trending movies for the week  https://api.themoviedb.org/3/trending/movie/week?api_key=9e1589a2fc403d6de0df005fb8a3d78a
 // search by keyword https://api.themoviedb.org/3/search/keyword?api_key=9e1589a2fc403d6de0df005fb8a3d78a&query=action&page=1
-sequelize.sync({ force: false }).then(() => {
+sequelize.sync({ force: true }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
 
