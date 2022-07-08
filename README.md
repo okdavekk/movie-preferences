@@ -64,8 +64,11 @@ As a movie enthusiast I want to navigate to a website that shows me the top tren
 ## Save Favorite
 ![Save Favorite](./public/visuals/6movie-preferences-save-favorite.png)
 
-## Saved Movies
-![Saved Movies](./public/visuals/7movie-preferences-saved-favorites.png)
+## Delete Buttons
+![Delete Buttons](./public/visuals/movies-preferences-delete-options.png)
+
+## Deleted Movie
+![Deleted Movie](./public/visuals/movies-preferences-deleted-movie.png)
 
 
 ## Project Description
