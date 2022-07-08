@@ -9,6 +9,10 @@
   --border-radius: 0.3rem;
 }
 
+.display-class {
+  background-color: var(--quatrinary);
+}
+
 body {
   font-family: Sans-serif;
   margin: 0;
@@ -125,6 +129,38 @@ img {
   border-radius: 10px;
   background-color: var(--light);
   color: var(--dark);
+}
+
+.searchH2 {
+  font-weight: bolder;
+  padding-top: 10px;
+  text-align: center;
+}
+
+.savebtn {
+  font-weight: bolder;
+  font-size: 30px;
+  margin: 0 auto;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  background-color: orange;
+  justify-content: center;
+}
+
+#title {
+  margin-top: 20px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.search-card {
+  padding: 0px 0px 10px 0px;
+}
+
+#searchBtn {
+  margin: 0 auto 10px;
+  display: flex;
 }
 
 .login-card {
