@@ -7,6 +7,7 @@ const saveClickHandler = async (event) => {
     console.log(posterPath);
     const movieTitle = document.querySelector('.movie-title').getAttribute('data-title');
     console.log(movieTitle);
+    // needs work here in order to leverage user_id
     // const userId = document.querySelector('.movie-title').getAttribute('data-title');
     // console.log(movieTitle);
     // const password = document.querySelector('#password-login').value.trim();
@@ -19,7 +20,7 @@ const saveClickHandler = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace('/');
+        document.location.replace('/favorite');
       } else {
         alert('Failed to log in.');
       }

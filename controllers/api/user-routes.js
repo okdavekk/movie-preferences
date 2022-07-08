@@ -4,18 +4,18 @@ const { User, Favorite } = require('../../models');
 //create route to save favorite
 router.post('/movies', async (req, res) => {
   console.log(req.body);
-  // try {
-  //   const favoriteData = await Favorite.create({
-  //     movie_title: req.body.movieTitle,
-  //     movie_id: req.body.movieId,
-  //     movie_poster: req.body.posterPath,
-  //     // user_id: req.body.,
-  //   });
-
-  // res.status(200).json(favoriteData);
-  // } catch (err) {
-  //   res.status(400).json(err);
-  // }
+  try {
+    const favoriteData = await Favorite.create({
+      movie_title: req.body.movieTitle,
+      movie_id: req.body.movieId,
+      movie_poster: req.body.posterPath,
+      user_id: req.session.user_id,
+    });
+    console.log(favoriteData.toJSON());
+    res.status(200).json(favoriteData.toJSON());
+  } catch (err) {
+    res.status(400).json(err);
+  }
 })
 
 
@@ -89,7 +89,7 @@ router.post('/login', async (req, res) => {
 
     req.session.save(() => {
       req.session.loggedIn = true;
-
+      // req.session.user_id = dbUserData.id;
       res
         .status(200)
         .json({ user: dbUserData, message: 'You are now logged in!' });
@@ -111,27 +111,5 @@ router.post('/logout', (req, res) => {
   }
 });
 
-// Favorites.create 
-// router.post('/favorites', async (req, res) => {
-//   // create a new category
-//   try {
-//       const favoriteData = await Favorite.create({
-//         username: req.body.username,
-//         email: req.body.email,
-//         password: req.body.password,
-//       });
-
-//       req.session.save(() => {
-//         req.session.loggedIn = true;
-//         req.session.loggedInUser = dbUserData.id;
-//         req.session.username = dbUserData.username;
-
-//         res.status(200).json(favoriteData);
-//       });
-//     } catch (err) {
-//       res.status(400).json(err);
-//     }
-//   });
-// Favorite.create
 
 module.exports = router;
