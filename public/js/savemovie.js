@@ -7,6 +7,8 @@ const saveClickHandler = async (event) => {
     console.log(posterPath);
     const movieTitle = document.querySelector('.movie-title').getAttribute('data-title');
     console.log(movieTitle);
+    // const userId = document.querySelector('.movie-title').getAttribute('data-title');
+    // console.log(movieTitle);
     // const password = document.querySelector('#password-login').value.trim();
   
     if (movieId && posterPath && movieTitle) {
