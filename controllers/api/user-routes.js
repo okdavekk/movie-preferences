@@ -3,13 +3,13 @@ const { User, Favorite } = require('../../models');
 
 //create route to save favorite
 router.post('/movies', async (req, res) => {
-  console.log(req.body);
+  console.log(req.session);
   try {
     const favoriteData = await Favorite.create({
       movie_title: req.body.movieTitle,
       movie_id: req.body.movieId,
       movie_poster: req.body.posterPath,
-      user_id: req.session.user_id,
+      user_id: req.session.loggedInUser
     });
     console.log(favoriteData.toJSON());
     res.status(200).json(favoriteData.toJSON());

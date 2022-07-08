@@ -1,11 +1,16 @@
+
+
 const saveClickHandler = async (event) => {
     event.preventDefault();
+    if (event.target.type !== "button" && event.target.textContent !== "Saved!") return;
   
-    const movieId = document.querySelector('.savebtn').getAttribute("data-id");
+    const movieId = event.target.getAttribute("data-id");
     console.log(movieId);
-    const posterPath = document.querySelector('.movie-poster').getAttribute('src');
+    const posterEl = event.target.previousSibling.previousSibling;
+    const posterPath = posterEl.getAttribute('src');
     console.log(posterPath);
-    const movieTitle = document.querySelector('.movie-title').getAttribute('data-title');
+    const movieEl = posterEl.previousSibling.previousSibling;
+    const movieTitle = movieEl.getAttribute('data-title');
     console.log(movieTitle);
     // needs work here in order to leverage user_id
     // const userId = document.querySelector('.movie-title').getAttribute('data-title');
@@ -20,7 +25,10 @@ const saveClickHandler = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace('/favorite');
+        event.target.textContent = "Saved!";
+        event.target.style.backgroundColor = "green";
+        event.target.style.color = "white";
+
       } else {
         alert('Failed to log in.');
       }
@@ -28,5 +36,5 @@ const saveClickHandler = async (event) => {
   };
 
   document
-  .querySelector('.savebtn')
+  .querySelector('.movies-wrapper')
   .addEventListener('click', saveClickHandler);

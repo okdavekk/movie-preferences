@@ -49,13 +49,18 @@ router.get("/search-results", async (req, res) => {
 
 //this needs work in order to leverage user_id
 router.get("/favorite", async (req, res) => {
+  if (!req.session.loggedIn) {
+    res.redirect("/");
+    return;
+  }
   try {
-    Favorite.findAll()
+    const data = await Favorite.findAll({where: {user_id: req.session.loggedInUser}})
+    
     //find user id here in order to get favorites for each user
-    const movies = data.results.slice(0, 8);
-
-    res.render("favorite", {
-      data: movies,
+    const favorites = data.map(favorite => favorite.get({plain:true}))
+    console.log(favorites)
+    res.render("liked-movies", {
+      data: favorites,
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {
@@ -73,22 +78,16 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
-router.get("/favorite", (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect("/");
-    return;
-  }
-
-  res.render("favorite");
-});
 
 router.get("/reviews", (req, res) => {
-  if (req.session.loggedIn) {
+  if (!req.session.loggedIn) {
     res.redirect("/");
     return;
   }
 
-  res.render("reviews");
+  res.render("reviews", {
+    loggedIn: req.session.loggedIn
+  });
 });
 
 module.exports = router;
