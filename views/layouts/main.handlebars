@@ -16,11 +16,11 @@
   <nav>
     <a href="/">Home</a>
     {{#if loggedIn}}
-    <button id="logout" class="btn-no-style">Logout</button>
+    <button id="logout" class="logout">Logout</button>
+    <a href="/reviews">Search</a>
+    <a href="/favorite">Favorites</a>
     {{else}}
     <a href="/login">Login</a>
-    <a href="/reviews">Reviews</a>
-    <a href="/favorites">Favorites</a>
     {{/if}}
   </nav>
     
@@ -31,6 +31,7 @@
   </main>
   {{#if loggedIn}}
   <script src="/js/logout.js"></script>
+
   {{/if}}
 </body>
 

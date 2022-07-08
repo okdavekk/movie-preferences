@@ -58,6 +58,24 @@ nav {
   background-color: var(--secondary);
   justify-content: center;
 }
+.logout{
+  background: var(--secondary);
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.1s;
+  color: var(--primary);
+  padding: 14px 20px;
+  text-decoration: none;
+  text-align: center;
+  font-size: x-large;
+  font-weight: bolder;
+}
+.logout:hover {
+  color: var(--secondary);
+  background-color: var(--dark);
+  text-decoration: none;
+}
 .description {
   color: azure;
   display: flex;
@@ -92,34 +110,10 @@ nav a:hover {
   align-items: center;
 }
 
-.btn-no-style {
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  text-decoration: none;
-  font-size: 100%;
-  transition: color 0.1s;
-  margin-left: 16px;
-}
-
 img {
   max-width: 100%;
   height: auto;
 }
-
-/* .painting {
-  width: 50%;
-  background-color: white;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  margin-bottom: 25px;
-}
-
-.painting-details {
-  text-align: center;
-  padding: 10px 20px;
-  font-weight: bold;
-} */
 
 /* CARDS */
 .card {
@@ -164,7 +158,7 @@ img {
 }
 
 .login-card {
-  margin: 0 0 20px 0;
+  margin: 20px 0 20px 0;
   flex: 0 0 50%;
   max-width: 50%;
   padding: 5px;
