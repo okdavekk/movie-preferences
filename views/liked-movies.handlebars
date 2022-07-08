@@ -1,12 +1,11 @@
-{{#each movies}}
-{{> favorites}}
+{{#each data}}
 <section class="card">
 
-  <a href="/movies/{{user_id}}">
+  {{!-- <a href="/movies/{{id}}"></a> --}}
 
-    <header data-title={{title}} class="movie-title">{{title}}</header>
-    <img class="movie-poster" src="https://image.tmdb.org/t/p/w500{{poster_path}}" alt="{{title}}">
+    <header data-title={{movie_title}} class="movie-title">{{movie_title}}</header>
+    <img class="movie-poster" src="https://image.tmdb.org/t/p/w500{{movie_poster}}" alt="{{movie_title}}">
 </section>
 {{/each}}
 
-<script src="./js/savemovie.js"></script>
+{{!-- <script src="./js/savemovie.js"></script> --}}
