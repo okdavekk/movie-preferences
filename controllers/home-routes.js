@@ -1,13 +1,14 @@
 const router = require("express").Router();
 const { Favorite } = require("../models");
 const axios = require("axios").default;
+require('dotenv').config();
 
 
 // API fetch request
 router.get("/", async (req, res) => {
   try {
     const { data } = await axios.get(
-      "https://api.themoviedb.org/3/trending/movie/day?api_key=9e1589a2fc403d6de0df005fb8a3d78a"
+      `https://api.themoviedb.org/3/trending/movie/day?api_key=${process.env.API_KEY}`
     );
     // console.log(data.results.slice(0, 5).length)
     const movies = data.results.slice(0, 4);
@@ -32,7 +33,7 @@ router.get("/search-results", async (req, res) => {
     }
 
     const { data } = await axios.get(
-      `https://api.themoviedb.org/3/search/movie?api_key=9e1589a2fc403d6de0df005fb8a3d78a&language=en-US&query=${title}&page=1`
+      `https://api.themoviedb.org/3/search/movie?api_key=${process.env.API_KEY}&language=en-US&query=${title}&page=1`
     );
     const movies = data.results.slice(0, 8);
    
