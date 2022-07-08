@@ -123,6 +123,7 @@ img {
   border-radius: 10px;
   background-color: var(--light);
   color: var(--dark);
+  max-width: 500px;
 }
 
 .searchH2 {
