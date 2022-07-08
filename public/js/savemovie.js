@@ -1,5 +1,3 @@
-
-
 const saveClickHandler = async (event) => {
     event.preventDefault();
     if (event.target.type !== "button" && event.target.textContent !== "Saved!") return;
@@ -12,11 +10,7 @@ const saveClickHandler = async (event) => {
     const movieEl = posterEl.previousSibling.previousSibling;
     const movieTitle = movieEl.getAttribute('data-title');
     console.log(movieTitle);
-    // needs work here in order to leverage user_id
-    // const userId = document.querySelector('.movie-title').getAttribute('data-title');
-    // console.log(movieTitle);
-    // const password = document.querySelector('#password-login').value.trim();
-  
+    
     if (movieId && posterPath && movieTitle) {
       const response = await fetch('/api/users/movies', {
         method: 'POST',
@@ -30,7 +24,7 @@ const saveClickHandler = async (event) => {
         event.target.style.color = "white";
 
       } else {
-        alert('Failed to log in.');
+        alert('Failed to save movie.');
       }
     }
   };

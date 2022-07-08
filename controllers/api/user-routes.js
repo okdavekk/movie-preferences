@@ -18,6 +18,18 @@ router.post('/movies', async (req, res) => {
   }
 })
 
+router.delete("/movies", async (req, res) => {
+  if (!req.session.loggedIn) {
+    return;
+  }
+  try {
+    await Favorite.destroy({where: {id: req.body.favoriteId}})
+    res.status(200).json({message: "Deleted!"});
+  } catch (err) {
+    console.log(err);
+    res.status(400).json(err);
+  }
+});
 
 // CREATE new user
 router.post('/', async (req, res) => {
