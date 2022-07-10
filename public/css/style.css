@@ -103,7 +103,7 @@ nav a:hover {
 .movie {
   flex: 4;
   background-color: var(--quatrinary);
-  padding: 50px;
+  padding: 25px;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
@@ -127,6 +127,7 @@ img {
   min-width: 500px ;
 }
 .movies-wrapper{
+  justify-content: center;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -162,7 +163,7 @@ img {
 }
 
 .login-card {
-  margin: 20px 0 20px 0;
+  margin: 20px 5px 20px 5px;
   flex: 0 0 50%;
   max-width: 50%;
   padding: 5px;

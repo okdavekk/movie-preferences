@@ -1250,6 +1250,7 @@ form [type='radio'] {
 }
 
 .row {
+  justify-content: center;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -1478,9 +1479,9 @@ form [type='radio'] {
     flex: 0 0 100%;
     max-width: 100%;
   }
-  .justify-space-between-md {
+  /* .justify-space-between-md {
     justify-content: space-between;
-  }
+  } */
   .justify-space-around-md {
     justify-content: space-around;
   }
