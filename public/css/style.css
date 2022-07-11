@@ -117,6 +117,8 @@ img {
 
 /* CARDS */
 .card {
+  flex-wrap: wrap;
+  display: flex;
   margin: 20px;
   flex: 0 1 500px;
   border: 7px double var(--dark);
@@ -176,6 +178,7 @@ img {
 }
 
 .card header {
+  min-width: 100%;
   color: var(--light);
   font-weight: bold;
   text-transform: uppercase;
