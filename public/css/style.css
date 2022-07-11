@@ -118,7 +118,7 @@ img {
 /* CARDS */
 .card {
   flex-wrap: wrap;
-  display: block;
+  display: flex;
   margin: 20px;
   flex: 0 1 500px;
   border: 7px double var(--dark);
@@ -136,6 +136,8 @@ img {
 }
 
 .searchH2 {
+  height: 100%;
+  width: 100%;
   font-weight: bolder;
   padding-top: 10px;
   text-align: center;
