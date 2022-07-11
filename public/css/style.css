@@ -118,7 +118,7 @@ img {
 /* CARDS */
 .card {
   flex-wrap: wrap;
-  display: flex;
+  display: block;
   margin: 20px;
   flex: 0 1 500px;
   border: 7px double var(--dark);
